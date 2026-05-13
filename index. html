@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Code Practice Hub</title>
+
+<script src="https://cdn.jsdelivr.net/pyodide/v0.23.4/full/pyodide.js"></script>
+
+<style>
+body {
+  margin:0;
+  font-family: Arial;
+  background:#020617;
+  color:white;
+  text-align:center;
+}
+h1 {color:#38bdf8;}
+
+.container {padding:15px;}
+
+select,button {
+  padding:10px;
+  margin:5px;
+  border-radius:6px;
+  border:none;
+}
+
+textarea {
+  width:95%;
+  height:160px;
+  background:#0f172a;
+  color:white;
+  border:none;
+  padding:10px;
+}
+
+iframe {
+  width:95%;
+  height:200px;
+  background:white;
+  margin-top:10px;
+}
+
+pre {
+  background:#0f172a;
+  padding:10px;
+  text-align:left;
+  margin:10px;
+}
+
+.card {
+  background:#0f172a;
+  padding:15px;
+  margin:15px;
+  border-radius:10px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Code Practice Hub</h1>
+
+<div class="container">
+
+<select id="lang">
+<option value="html">HTML</option>
+<option value="css">CSS</option>
+<option value="js">JavaScript</option>
+<option value="python">Python</option>
+</select>
+
+<select onchange="loadQuestion()" id="question">
+<option value="">Select Practice</option>
+<option value="h1">HTML: Create Heading</option>
+<option value="btn">HTML: Create Button</option>
+<option value="color">CSS: Change Background</option>
+<option value="js">JS: Show Alert</option>
+<option value="py">Python: Print Hello</option>
+</select>
+
+<textarea id="code"><h1>Hello World</h1></textarea>
+
+<br>
+
+<button onclick="runCode()">Run</button>
+<button onclick="resetCode()">Reset</button>
+
+<iframe id="output"></iframe>
+<pre id="pyoutput"></pre>
+
+<!-- WhatsApp Help Section -->
+<div class="card">
+  <h3>Need Help?</h3>
+  <p>Basic coding support available</p>
+  <p style="font-size:14px;opacity:0.8;">
+    7 days free support. After that ₹100 maintenance charge.
+  </p>
+
+  <a href="https://wa.me/919572952368?text=Hi%2C%20I%20need%20help%20with%20coding.%20I%20agree%20to%20₹100%20charge%20after%207%20days">
+    <button style="background:#25D366;color:white;">
+      Contact on WhatsApp
+    </button>
+  </a>
+</div>
+
+<!-- Footer -->
+<p style="font-size:12px;opacity:0.6;">
+Using free hosting. Uptime not guaranteed.<br>
+7 days free support. After that ₹100 maintenance charge.<br>
+No liability for downtime or loss.
+</p>
+
+</div>
+
+<script>
+let pyodide, ready=false;
+
+(async()=>{
+  pyodide = await loadPyodide();
+  ready=true;
+})();
+
+function loadQuestion(){
+let q=document.getElementById("question").value;
+let codeBox=document.getElementById("code");
+
+if(q==="h1") codeBox.value="<h1>Hello World</h1>";
+if(q==="btn") codeBox.value="<button>Click Me</button>";
+if(q==="color") codeBox.value="body { background: red; }";
+if(q==="js") codeBox.value="alert('Hello');";
+if(q==="py") codeBox.value="print('Hello World')";
+}
+
+function runCode(){
+let lang=document.getElementById("lang").value;
+let code=document.getElementById("code").value;
+
+let output=document.getElementById("output");
+let pyoutput=document.getElementById("pyoutput");
+
+output.srcdoc="";
+pyoutput.textContent="";
+
+if(lang==="html"){
+  output.srcdoc=code;
+}
+else if(lang==="css"){
+  output.srcdoc="<style>"+code+"</style>";
+}
+else if(lang==="js"){
+  output.srcdoc="<script>"+code+"<\/script>";
+}
+else if(lang==="python"){
+  if(!ready){alert("Loading Python..."); return;}
+
+  pyodide.runPythonAsync(`
+import sys
+from io import StringIO
+old_stdout = sys.stdout
+sys.stdout = mystdout = StringIO()
+
+${code}
+
+sys.stdout = old_stdout
+mystdout.getvalue()
+  `).then(result=>{
+    pyoutput.textContent=result;
+  });
+}
+}
+
+function resetCode(){
+document.getElementById("code").value="";
+document.getElementById("output").srcdoc="";
+document.getElementById("pyoutput").textContent="";
+}
+</script>
+
+</body>
+</html>
