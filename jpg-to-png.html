@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>JPG to PNG Converter | TinyPixel</title>
+
+<style>
+body{
+font-family:Arial,sans-serif;
+background:#121212;
+color:white;
+margin:0;
+padding:40px;
+}
+
+.container{
+max-width:700px;
+margin:auto;
+background:#1f1f1f;
+padding:25px;
+border-radius:12px;
+text-align:center;
+}
+
+button{
+padding:12px 22px;
+background:#007BFF;
+color:white;
+border:none;
+border-radius:8px;
+cursor:pointer;
+margin-top:20px;
+}
+
+button:hover{
+background:#0056d2;
+}
+
+img{
+max-width:100%;
+margin-top:20px;
+border-radius:10px;
+}
+
+#downloadBtn{
+display:none;
+background:#28a745;
+padding:12px 20px;
+color:white;
+text-decoration:none;
+border-radius:8px;
+margin-top:20px;
+display:inline-block;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>JPG to PNG Converter</h1>
+
+<p>Convert JPG images into PNG instantly.</p>
+
+<input type="file" id="imageInput" accept="image/jpeg">
+
+<br>
+
+<img id="preview">
+
+<br>
+
+<button onclick="convertImage()">Convert to PNG</button>
+
+<br>
+
+<a id="downloadBtn">Download PNG</a>
+
+</div>
+
+<script>
+
+let image=new Image();
+
+document.getElementById("imageInput").addEventListener("change",function(e){
+
+const file=e.target.files[0];
+
+if(!file) return;
+
+const reader=new FileReader();
+
+reader.onload=function(event){
+
+image.src=event.target.result;
+
+document.getElementById("preview").src=event.target.result;
+
+}
+
+reader.readAsDataURL(file);
+
+});
+
+function convertImage(){
+
+if(!image.src){
+
+alert("Please select a JPG image.");
+
+return;
+
+}
+
+const canvas=document.createElement("canvas");
+
+canvas.width=image.width;
+
+canvas.height=image.height;
+
+const ctx=canvas.getContext("2d");
+
+ctx.drawImage(image,0,0);
+
+const png=canvas.toDataURL("image/png");
+
+const download=document.getElementById("downloadBtn");
+
+download.href=png;
+
+download.download="TinyPixel.png";
+
+download.style.display="inline-block";
+
+}
+
+</script>
+
+</body>
+</html>

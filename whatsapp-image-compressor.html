@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WhatsApp Image Compressor | TinyPixel</title>
+
+<style>
+body{
+font-family:Arial,sans-serif;
+background:#121212;
+color:#fff;
+text-align:center;
+padding:30px;
+}
+.container{
+max-width:700px;
+margin:auto;
+background:#1f1f1f;
+padding:25px;
+border-radius:12px;
+}
+button{
+padding:12px 22px;
+background:#25D366;
+color:#fff;
+border:none;
+border-radius:8px;
+cursor:pointer;
+margin-top:15px;
+}
+img{
+max-width:100%;
+margin-top:20px;
+border-radius:10px;
+}
+#download{
+display:none;
+background:#25D366;
+padding:12px 20px;
+color:white;
+text-decoration:none;
+border-radius:8px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>WhatsApp Image Compressor</h1>
+
+<p>Compress images for faster WhatsApp sharing.</p>
+
+<input type="file" id="upload" accept="image/*">
+
+<br>
+
+<img id="preview">
+
+<br>
+
+<label>Compression Quality</label>
+
+<input type="range" id="quality" min="20" max="90" value="60">
+
+<br>
+
+<button onclick="compress()">Compress Image</button>
+
+<br><br>
+
+<a id="download">Download Compressed Image</a>
+
+</div>
+
+<script>
+
+let img=new Image();
+
+upload.onchange=e=>{
+
+const file=e.target.files[0];
+
+const reader=new FileReader();
+
+reader.onload=x=>{
+
+img.src=x.target.result;
+preview.src=x.target.result;
+
+}
+
+reader.readAsDataURL(file);
+
+}
+
+function compress(){
+
+const canvas=document.createElement("canvas");
+
+canvas.width=img.width;
+
+canvas.height=img.height;
+
+const ctx=canvas.getContext("2d");
+
+ctx.drawImage(img,0,0);
+
+const q=quality.value/100;
+
+const data=canvas.toDataURL("image/jpeg",q);
+
+download.href=data;
+download.download="whatsapp-image.jpg";
+download.style.display="inline-block";
+
+}
+
+</script>
+
+</body>
+</html>

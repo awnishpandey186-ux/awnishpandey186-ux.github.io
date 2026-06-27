@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>PNG to JPG Converter | TinyPixel</title>
+
+<meta name="description" content="Convert PNG images to JPG online for free using TinyPixel. Fast, secure and works directly in your browser.">
+
+<style>
+
+body{
+font-family:Arial,sans-serif;
+background:#121212;
+color:white;
+margin:0;
+padding:0;
+}
+
+.container{
+max-width:700px;
+margin:40px auto;
+padding:25px;
+background:#1e1e1e;
+border-radius:15px;
+text-align:center;
+}
+
+input{
+margin:20px 0;
+}
+
+button{
+padding:12px 24px;
+font-size:16px;
+border:none;
+border-radius:10px;
+cursor:pointer;
+background:#007BFF;
+color:white;
+}
+
+button:hover{
+background:#0056d2;
+}
+
+img{
+max-width:100%;
+margin-top:20px;
+border-radius:10px;
+}
+
+#downloadBtn{
+display:none;
+margin-top:20px;
+background:#28a745;
+padding:12px 25px;
+border-radius:10px;
+color:white;
+text-decoration:none;
+display:inline-block;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>PNG to JPG Converter</h1>
+
+<p>Upload your PNG image and convert it into JPG instantly.</p>
+
+<input type="file" id="imageInput" accept="image/png">
+
+<br>
+
+<img id="preview">
+
+<br><br>
+
+<button onclick="convertImage()">Convert to JPG</button>
+
+<br>
+
+<a id="downloadBtn">Download JPG</a>
+
+</div>
+
+<script>
+
+let image=new Image();
+
+document.getElementById("imageInput").addEventListener("change",function(e){
+
+const file=e.target.files[0];
+
+if(!file) return;
+
+const reader=new FileReader();
+
+reader.onload=function(event){
+
+image.src=event.target.result;
+
+document.getElementById("preview").src=event.target.result;
+
+}
+
+reader.readAsDataURL(file);
+
+});
+
+function convertImage(){
+
+if(!image.src){
+
+alert("Please select a PNG image.");
+
+return;
+
+}
+
+const canvas=document.createElement("canvas");
+
+canvas.width=image.width;
+
+canvas.height=image.height;
+
+const ctx=canvas.getContext("2d");
+
+ctx.fillStyle="#ffffff";
+
+ctx.fillRect(0,0,canvas.width,canvas.height);
+
+ctx.drawImage(image,0,0);
+
+const jpg=canvas.toDataURL("image/jpeg",0.95);
+
+const download=document.getElementById("downloadBtn");
+
+download.href=jpg;
+
+download.download="TinyPixel.jpg";
+
+download.style.display="inline-block";
+
+}
+
+</script>
+
+</body>
+</html>

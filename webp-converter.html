@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>WebP Converter | TinyPixel</title>
+
+<style>
+
+body{
+font-family:Arial,sans-serif;
+background:#111;
+color:#fff;
+margin:0;
+padding:40px;
+}
+
+.container{
+max-width:700px;
+margin:auto;
+background:#1f1f1f;
+padding:25px;
+border-radius:12px;
+text-align:center;
+}
+
+select,input,button{
+margin:15px;
+padding:10px;
+font-size:16px;
+}
+
+button{
+background:#007BFF;
+color:white;
+border:none;
+border-radius:8px;
+cursor:pointer;
+}
+
+img{
+max-width:100%;
+margin-top:20px;
+border-radius:10px;
+}
+
+#download{
+display:none;
+background:#28a745;
+padding:12px 20px;
+color:white;
+text-decoration:none;
+border-radius:8px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>WebP Converter</h1>
+
+<p>Convert JPG or PNG images into WebP.</p>
+
+<input type="file" id="upload" accept="image/png,image/jpeg">
+
+<br>
+
+<img id="preview">
+
+<br>
+
+<label>Quality</label>
+
+<select id="quality">
+
+<option value="1">High</option>
+
+<option value="0.8">Medium</option>
+
+<option value="0.6">Low</option>
+
+</select>
+
+<br>
+
+<button onclick="convert()">Convert to WebP</button>
+
+<br><br>
+
+<a id="download">Download WebP</a>
+
+</div>
+
+<script>
+
+let img=new Image();
+
+upload.onchange=e=>{
+
+const file=e.target.files[0];
+
+const reader=new FileReader();
+
+reader.onload=x=>{
+
+img.src=x.target.result;
+
+preview.src=x.target.result;
+
+}
+
+reader.readAsDataURL(file);
+
+}
+
+function convert(){
+
+const canvas=document.createElement("canvas");
+
+canvas.width=img.width;
+
+canvas.height=img.height;
+
+const ctx=canvas.getContext("2d");
+
+ctx.drawImage(img,0,0);
+
+const url=canvas.toDataURL("image/webp",Number(quality.value));
+
+download.href=url;
+
+download.download="TinyPixel.webp";
+
+download.style.display="inline-block";
+
+}
+
+</script>
+
+</body>
+</html>

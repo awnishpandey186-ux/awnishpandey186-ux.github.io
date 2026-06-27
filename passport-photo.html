@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Passport Photo Maker | TinyPixel</title>
+
+<style>
+
+body{
+font-family:Arial,sans-serif;
+background:#111;
+color:#fff;
+text-align:center;
+padding:30px;
+}
+
+.container{
+max-width:700px;
+margin:auto;
+background:#1f1f1f;
+padding:25px;
+border-radius:12px;
+}
+
+canvas{
+border:2px solid #555;
+margin-top:20px;
+max-width:100%;
+background:white;
+}
+
+button,select{
+padding:10px 18px;
+margin:10px;
+border:none;
+border-radius:8px;
+cursor:pointer;
+font-size:16px;
+}
+
+button{
+background:#007BFF;
+color:white;
+}
+
+a{
+display:none;
+background:#28a745;
+padding:10px 20px;
+border-radius:8px;
+color:white;
+text-decoration:none;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Passport Photo Maker</h1>
+
+<p>Create passport-size photos instantly.</p>
+
+<input type="file" id="upload" accept="image/*">
+
+<br>
+
+<select id="size">
+<option value="35x45">35 × 45 mm</option>
+<option value="2x2">2 × 2 inch</option>
+</select>
+
+<br>
+
+<canvas id="canvas" width="413" height="531"></canvas>
+
+<br>
+
+<button onclick="generate()">Generate</button>
+
+<br><br>
+
+<a id="download">Download Passport Photo</a>
+
+</div>
+
+<script>
+
+const img=new Image();
+
+upload.onchange=e=>{
+
+const file=e.target.files[0];
+
+const reader=new FileReader();
+
+reader.onload=x=>{
+
+img.src=x.target.result;
+
+}
+
+reader.readAsDataURL(file);
+
+}
+
+function generate(){
+
+const canvas=document.getElementById("canvas");
+
+const ctx=canvas.getContext("2d");
+
+ctx.fillStyle="white";
+
+ctx.fillRect(0,0,canvas.width,canvas.height);
+
+ctx.drawImage(img,0,0,canvas.width,canvas.height);
+
+const url=canvas.toDataURL("image/png");
+
+download.href=url;
+
+download.download="passport-photo.png";
+
+download.style.display="inline-block";
+
+}
+
+</script>
+
+</body>
+</html>
