@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>JPG to PNG Converter | TinyPixel</title>
+<meta name="description" content="Free JPG to PNG converter by TinyPixel. Convert images instantly in your browser.">
+<meta name="keywords" content="jpg to png converter, jpeg to png, image converter online, convert jpg to png, TinyPixel">
+
+<meta name="robots" content="index, follow">
+
+<meta property="og:title" content="JPG to PNG Converter | TinyPixel">
+<meta property="og:description" content="Convert JPG images to PNG online for free.">
+<meta property="og:type" content="website">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7296969739309915" crossorigin="anonymous"></script>
+<style>
+body{
+font-family:Arial,sans-serif;
+background:#0f1117;
+color:#fff;
+margin:0;
+line-height:1.7;
+}
+
+.wrap{
+max-width:900px;
+margin:auto;
+padding:25px;
+}
+
+.card,section{
+background:#1b1b1b;
+padding:25px;
+border-radius:12px;
+margin-top:25px;
+box-shadow:0 5px 15px rgba(0,0,0,.3);
+}
+
+input[type=file]{
+width:100%;
+padding:12px;
+margin:15px 0;
+background:#222;
+color:#fff;
+border-radius:8px;
+}
+
+button{
+font-size:16px;
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>JPG to PNG Converter</h1>
+<p>Convert JPG images to PNG instantly. Processing happens in your browser.</p>
+<div class="card">
+<input type="file" id="imageInput" accept=".jpg,.jpeg,image/jpeg"><br><br>
+<button onclick="convertImage()">Convert to PNG</button><br><br>
+<img id="preview">
+<br><br>
+<a id="downloadBtn" class="btn" style="display:none">Download PNG</a>
+</div>
+
+<section>
+<h2>About this Tool</h2>
+<p>TinyPixel helps convert JPG images into PNG format quickly without installing software. It is suitable for graphics, screenshots, logos and images that you want to save as PNG.</p>
+<h2>How to Convert JPG to PNG</h2>
+
+<ol>
+<li>Select a JPG or JPEG image.</li>
+<li>Click "Convert to PNG".</li>
+<li>Preview the converted image.</li>
+<li>Download the PNG file instantly.</li>
+</ol>
+<h2>Related Tools</h2>
+<p>
+<a href="png-to-jpg.html">PNG to JPG</a> |
+<a href="compress-image-to-50kb.html">50KB Compressor</a> |
+<a href="compress-image-to-100kb.html">100KB Compressor</a> |
+<a href="passport-photo.html">Passport Photo</a>
+</p>
+<h2>Frequently Asked Questions</h2>
+
+<h3>Is TinyPixel free?</h3>
+
+<p>Yes, TinyPixel is completely free.</p>
+
+<h3>Do I need to install software?</h3>
+
+<p>No. Everything works inside your browser.</p>
+
+<h3>Are my files uploaded?</h3>
+
+<p>No. Your files remain on your device whenever possible.</p>
+</section>
+<section>
+
+<h2>Benefits of PNG Format</h2>
+
+<ul>
+
+<li>Lossless image quality</li>
+
+<li>Better for logos and graphics</li>
+
+<li>Supports transparent backgrounds</li>
+
+<li>Perfect for editing</li>
+
+<li>High quality image storage</li>
+
+</ul>
+
+</section>
+<footer>
+
+<hr>
+
+<p>
+
+<a href="index.html">Home</a> |
+
+<a href="png-to-jpg.html">PNG to JPG</a> |
+
+<a href="webp-converter.html">WebP Converter</a> |
+
+<a href="compress-image-to-50kb.html">50KB</a> |
+
+<a href="compress-image-to-100kb.html">100KB</a> |
+
+<a href="passport-photo.html">Passport Photo</a>
+
+</p>
+
+<p>
+
+<a href="about.html">About</a> |
+
+<a href="privacy.html">Privacy Policy</a> |
+
+<a href="terms.html">Terms & Conditions</a> |
+
+<a href="faq.html">FAQ</a> |
+
+<a href="contact.html">Contact</a>
+
+</p>
+
+<p>© 2026 TinyPixel</p>
+
+</footer>
+</div>
+<script>
+let image=new Image();
+document.getElementById("imageInput").addEventListener("change",e=>{
+ const f=e.target.files[0]; if(!f)return;
+ const r=new FileReader();
+ r.onload=ev=>{image.onload=()=>{preview.src=image.src;preview.style.display='block';};image.src=ev.target.result;};
+ r.readAsDataURL(f);
+});
+function convertImage(){
+ if(!image.src){alert("Select a JPG image.");return;}
+ const c=document.createElement("canvas");
+ c.width=image.width;c.height=image.height;
+ c.getContext("2d").drawImage(image,0,0);
+ const png=c.toDataURL("image/png");
+ const d=document.getElementById("downloadBtn");
+ d.href=png; d.download="converted-image.png"; d.style.display="inline-block";
+}
+</script>
+</body></html>

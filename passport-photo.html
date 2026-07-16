@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Passport Photo Maker & Compressor | TinyPixel</title>
+
+<meta name="description"
+content="Create passport size photos online for Aadhaar, PAN, Passport, Visa, Government Forms, Job Applications and Exams. Free Passport Photo Maker by TinyPixel.">
+
+<meta name="keywords"
+content="passport photo maker, passport photo compressor, passport size photo, visa photo, Aadhaar photo, TinyPixel">
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7296969739309915"
+crossorigin="anonymous"></script>
+
+<link rel="icon" href="favicon.png">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#0f1117;
+color:white;
+line-height:1.6;
+}
+
+.container{
+max-width:950px;
+margin:auto;
+padding:20px;
+}
+
+header{
+text-align:center;
+margin-bottom:30px;
+}
+
+header h1{
+font-size:36px;
+margin-bottom:10px;
+}
+
+header p{
+color:#bbb;
+}
+
+nav{
+margin-top:20px;
+}
+
+nav a{
+color:#00ffae;
+text-decoration:none;
+margin:0 8px;
+}
+
+.card{
+background:#1b1b1b;
+padding:25px;
+border-radius:14px;
+margin-bottom:30px;
+box-shadow:0 0 20px rgba(0,0,0,.4);
+}
+
+input[type=file]{
+width:100%;
+padding:12px;
+margin:15px 0;
+background:#222;
+color:white;
+border-radius:8px;
+}
+
+select{
+width:100%;
+padding:12px;
+margin-bottom:15px;
+background:#222;
+color:white;
+border:none;
+border-radius:8px;
+}
+
+button{
+background:#00c853;
+color:white;
+border:none;
+padding:14px 22px;
+border-radius:8px;
+cursor:pointer;
+font-size:16px;
+margin-top:10px;
+}
+
+button:hover{
+opacity:.9;
+}
+
+canvas{
+width:100%;
+max-width:420px;
+background:white;
+border-radius:10px;
+margin-top:20px;
+}
+
+#download{
+display:none;
+margin-top:20px;
+padding:14px 22px;
+background:#2962ff;
+color:white;
+text-decoration:none;
+border-radius:8px;
+display:inline-block;
+}
+
+.info{
+background:#1b1b1b;
+padding:25px;
+border-radius:14px;
+margin-top:30px;
+}
+
+.info h2{
+color:#00ffae;
+margin-bottom:15px;
+}
+
+.info p{
+margin-bottom:15px;
+color:#ccc;
+}
+
+footer{
+margin-top:40px;
+border-top:1px solid #333;
+padding-top:20px;
+text-align:center;
+}
+
+footer a{
+color:#00ffae;
+text-decoration:none;
+margin:0 6px;
+}
+
+@media(max-width:768px){
+
+header h1{
+font-size:28px;
+}
+
+.container{
+padding:15px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<header>
+
+<h1>Passport Photo Maker & Compressor</h1>
+
+<p>Create passport-size photos for Visa, Passport, Aadhaar, PAN Card, Government Forms and Job Applications.</p>
+
+<nav>
+
+<a href="index.html">Home</a>
+
+<a href="compress-image-to-50kb.html">50KB</a>
+
+<a href="compress-image-to-100kb.html">100KB</a>
+
+<a href="png-to-jpg.html">PNG to JPG</a>
+
+<a href="jpg-to-png.html">JPG to PNG</a>
+
+</nav>
+
+</header>
+
+<div class="card">
+
+<h2>Create Passport Photo</h2>
+
+<input type="file" id="upload" accept="image/*">
+
+<select id="size">
+
+<option value="35x45">35 × 45 mm (India)</option>
+
+<option value="2x2">2 × 2 inch (USA)</option>
+
+<option value="visa">Visa Photo</option>
+
+</select>
+<div style="text-align:center;">
+
+<canvas id="canvas" width="413" height="531"></canvas>
+
+<br>
+
+<button onclick="generatePassport()">
+Generate Passport Photo
+</button>
+
+<br><br>
+
+<a id="download" download="passport-photo.jpg">
+Download Passport Photo
+</a>
+
+</div>
+
+</div>
+
+<div class="info">
+
+<h2>Passport Photo Tool</h2>
+
+<p>
+TinyPixel Passport Photo Maker helps you create passport-size photographs for Aadhaar, PAN Card, Passport, Visa, Government Job Forms, Online Applications and Exam Forms.
+</p>
+
+<p>
+Everything works directly in your browser, so your photos stay on your device and are not uploaded to any server.
+</p>
+
+<p>
+Supported output formats include JPG and PNG with high-quality compression suitable for official uploads.
+</p>
+
+</div>
+
+<footer>
+
+<p>
+
+<a href="index.html">Home</a> |
+
+<a href="compress-image-to-50kb.html">50KB</a> |
+
+<a href="compress-image-to-100kb.html">100KB</a> |
+
+<a href="png-to-jpg.html">PNG to JPG</a> |
+
+<a href="jpg-to-png.html">JPG to PNG</a> |
+
+<a href="webp-converter.html">WebP Converter</a> |
+
+<a href="about.html">About</a> |
+
+<a href="privacy.html">Privacy Policy</a> |
+
+<a href="terms.html">Terms & Conditions</a> |
+
+<a href="faq.html">FAQ</a> |
+
+<a href="contact.html">Contact</a>
+
+</p>
+
+<p>© 2026 TinyPixel</p>
+
+</footer>
+
+</div>
+
+<script src="passport-photo.js"></script>
+
+</body>
+
+</html>

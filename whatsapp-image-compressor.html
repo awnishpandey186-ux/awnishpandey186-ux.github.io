@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp Image Compressor Online - TinyPixel</title>
+    <meta name="description" content="Compress your images quickly for seamless WhatsApp sharing. Reduce file size locally in your browser without losing visual quality.">
+    <meta name="keywords" content="whatsapp image compressor, compress image for whatsapp, reduce photo size online, shrink images, tiny pixel">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="TinyPixel">
+    <link rel="canonical" href="https://awnishpandey186-ux.github.io/whatsapp-image-compressor.html">
+
+    <!-- Open Graph Metadata -->
+    <meta property="og:title" content="WhatsApp Image Compressor Online - TinyPixel">
+    <meta property="og:description" content="Quickly resize and compress images locally in your browser for fast WhatsApp sending. Safe, private, and 100% free.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://awnishpandey186-ux.github.io/whatsapp-image-compressor.html">
+    <meta property="og:image" content="images/og-image.png">
+
+    <!-- Google AdSense Integration -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7296969739309915" crossorigin="anonymous"></script>
+
+    <!-- Professional Embedded CSS Stylesheet -->
+    <style>
+        :root {
+            --primary-color: #25D366; /* WhatsApp Green */
+            --primary-hover: #128C7E; /* Darker Green */
+            --accent-blue: #0284c7;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+            --max-width: 900px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 20px 0;
+        }
+
+        .container {
+            width: 100%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: var(--card-bg);
+            border-bottom: 1px solid var(--border-color);
+            padding: 15px 0;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        header .logo-link {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--accent-blue);
+            text-decoration: none;
+            display: inline-block;
+            margin-left: 20px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            padding: 35px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        h1, h2 {
+            color: #0f172a;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 15px;
+        }
+
+        h2 {
+            font-size: 1.3rem;
+            margin: 35px 0 12px 0;
+            border-left: 4px solid var(--accent-blue);
+            padding-left: 10px;
+        }
+
+        .intro-text {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            margin-bottom: 25px;
+        }
+
+        /* Tool Workspace Styles */
+        .workspace-box {
+            background-color: #f8fafc;
+            border: 2px dashed var(--border-color);
+            border-radius: 8px;
+            padding: 30px 20px;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        input[type="file"] {
+            margin: 15px 0;
+            max-width: 100%;
+        }
+
+        .slider-group {
+            margin: 20px 0;
+            padding: 15px;
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .slider-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #334155;
+        }
+
+        input[type="range"] {
+            width: 100%;
+            accent-color: var(--primary-color);
+        }
+
+        button.action-btn {
+            background-color: var(--primary-color);
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 1rem;
+            padding: 12px 28px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.2s ease;
+            box-shadow: 0 2px 4px rgba(37, 211, 102, 0.2);
+        }
+
+        button.action-btn:hover {
+            background-color: var(--primary-hover);
+        }
+
+        #preview {
+            max-width: 100%;
+            max-height: 350px;
+            margin-top: 20px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            display: none;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #download {
+            display: none;
+            background-color: var(--primary-color);
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 12px 28px;
+            border-radius: 8px;
+            margin-top: 15px;
+            display: none;
+            max-width: max-content;
+            margin-left: auto;
+            margin-right: auto;
+            transition: background 0.2s ease;
+            box-shadow: 0 2px 4px rgba(37, 211, 102, 0.2);
+        }
+
+        #download:hover {
+            background-color: var(--primary-hover);
+        }
+
+        /* Utility Links Grid Layout */
+        .utility-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 12px;
+            list-style: none;
+            margin: 20px 0;
+            padding-left: 0;
+        }
+
+        .utility-grid a {
+            display: block;
+            background-color: #f8fafc;
+            padding: 12px 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .utility-grid a:hover {
+            background-color: var(--accent-blue);
+            color: white;
+            border-color: var(--accent-blue);
+            transform: translateY(-1px);
+        }
+
+        .action-links {
+            margin-top: 35px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        a.back-home {
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        a.back-home:hover {
+            color: var(--primary-hover);
+            text-decoration: underline;
+        }
+
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        footer a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin: 0 8px;
+        }
+
+        footer a:hover {
+            color: var(--accent-blue);
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            .utility-grid { grid-template-columns: 1fr; }
+            .card { padding: 20px; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <header>
+            <a href="index.html" class="logo-link">TinyPixel</a>
+        </header>
+
+        <main class="card">
+            <h1>WhatsApp Image Compressor</h1>
+            <p class="intro-text">Reduce the file size of your high-resolution images instantly before sending them. Ensure fast uploads and preserve storage space without sacrificing chat layout quality.</p>
+
+            <div class="workspace-box">
+                <p style="font-weight: 600; color: #475569; margin-bottom: 10px;">Select your image file:</p>
+                <input type="file" id="upload" accept="image/*">
+                
+                <img id="preview" alt="Preview Output">
+
+                <div class="slider-group">
+                    <label for="quality">Compression Quality: <span id="quality-val">60%</span></label>
+                    <input type="range" id="quality" min="20" max="90" value="60">
+                </div>
+
+                <button class="action-btn" onclick="compress()">Compress Image</button>
+                <br><br>
+                <a id="download">Download Compressed Image</a>
+            </div>
+
+            <h2>Why Compress Images for WhatsApp?</h2>
+            <p>WhatsApp automatically processes and compresses heavy source photos to optimize bandwidth across their global data networks. By pre-compressing your target images with our client-side utility, you can proactively bypass sudden blur artifacts and retain targeted control over the exact dimensions and clarity profiles of your photo shares.</p>
+
+            <!-- Integrated Dynamic Internal Links Navigation Map Block -->
+            <h2>Internal Utilities Mapping & Directories</h2>
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 10px;">Quickly jump between our various localized sizing frameworks, format encoders, and compliance documentation:</p>
+            
+            <ul class="utility-grid">
+                <li><a href="compress-image-to-20kb.html">Compress Image to 20KB</a></li>
+                <li><a href="compress-image-to-30kb.html">Compress Image to 30KB</a></li>
+                <li><a href="compress-image-to-50kb.html">Compress Image to 50KB</a></li>
+                <li><a href="compress-image-to-100kb.html">Compress Image to 100KB</a></li>
+                <li><a href="compress-image-to-200kb.html">Compress Image to 200KB</a></li>
+                <li><a href="compress-image-for-online-form.html">Compress for Online Form</a></li>
+                <li><a href="compress-image-for-job-application.html">Compress for Job Application</a></li>
+                <li><a href="compress-image-for-scholarship-form.html">Compress for Scholarship Form</a></li>
+                <li><a href="compress-image-for-driving-licence.html">Compress for Driving Licence</a></li>
+                <li><a href="compress-image-for-government-job.html">Compress for Government Job</a></li>
+                <li><a href="compress-image-for-visa-application.html">Compress for Visa Application</a></li>
+                <li><a href="Compress-image-for-college-admission.html">Compress for College Admission</a></li>
+                <li><a href="whatsapp-image-compressor.html" style="background-color: var(--primary-color); color: white; border-color: var(--primary-color);">WhatsApp Image Compressor</a></li>
+                <li><a href="passport-photo.html">Passport Photo Tool</a></li>
+                <li><a href="jpg-to-png.html">Convert JPG to PNG Online</a></li>
+                <li><a href="png-to-jpg.html">Convert PNG to JPG Online</a></li>
+                <li><a href="webp-converter.html">WEBP Image Converter</a></li>
+                <li><a href="privacy.html" style="border-left: 3px solid var(--accent-blue); font-weight: bold;">Privacy Policy Statement</a></li>
+                <li><a href="terms.html" style="border-left: 3px solid var(--accent-blue); font-weight: bold;">Terms and Conditions</a></li>
+            </ul>
+
+            <div class="action-links">
+                <a href="index.html" class="back-home">← Back to Home Dashboard</a>
+                <span style="font-size: 0.85rem; color: var(--text-muted);">Secure Client Canvas API</span>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 TinyPixel. All Rights Reserved.</p>
+            <p style="margin-top: 5px;">
+                <a href="index.html">Home</a> |
+                <a href="about.html">About Us</a> |
+                <a href="faq.html">FAQs</a> |
+                <a href="privacy.html">Privacy Policy</a> | 
+                <a href="terms.html">Terms of Service</a> | 
+                <a href="contact.html">Contact Us</a>
+            </p>
+        </footer>
+    </div>
+
+    <!-- Hardened Client-Side Canvas Engine JavaScript -->
+    <script>
+        let img = new Image();
+        const upload = document.getElementById("upload");
+        const preview = document.getElementById("preview");
+        const qualitySlider = document.getElementById("quality");
+        const qualityVal = document.getElementById("quality-val");
+        const download = document.getElementById("download");
+
+        // Sync slider value text
+        qualitySlider.addEventListener("input", () => {
+            qualityVal.textContent = qualitySlider.value + "%";
+        });
+
+        upload.onchange = e => {
+            const file = e.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = x => {
+                img.src = x.target.result;
+                img.onload = () => {
+                    preview.src = img.src;
+                    preview.style.display = "block";
+                    // Reset previous download button if new image is uploaded
+                    download.style.display = "none";
+                }
+            }
+            reader.readAsDataURL(file);
+        }
+
+        function compress() {
+            if (!img.src) {
+                alert("Please upload an image first.");
+                return;
+            }
+
+            const canvas = document.createElement("canvas");
+            canvas.width = img.width;
+            canvas.height = img.height;
+            const ctx = canvas.getContext("2d");
+            ctx.drawImage(img, 0, 0);
+
+            const q = qualitySlider.value / 100;
+            const data = canvas.toDataURL("image/jpeg", q);
+
+            download.href = data;
+            download.download = "whatsapp-image-" + Date.now() + ".jpg";
+            download.style.display = "block";
+            
+            // Auto scroll down slightly to focus on the download target button
+            download.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+    </script>
+
+</body>
+</html>

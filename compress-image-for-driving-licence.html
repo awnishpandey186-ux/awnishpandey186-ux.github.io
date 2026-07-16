@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Compress Image for Driving Licence Online Free | TinyPixel</title>
+
+<meta name="description" content="Compress images for driving licence applications online. Reduce photo size for learner licence, driving licence renewal and RTO applications without losing quality.">
+
+<meta name="keywords" content="compress image for driving licence, driving licence photo compressor, learner licence photo resize, RTO image compressor">
+
+<meta name="robots" content="index,follow">
+
+<meta name="author" content="TinyPixel">
+
+<link rel="canonical" href="https://awnishpandey186-ux.github.io/compress-image-for-driving-licence.html">
+
+<meta property="og:title" content="Compress Image for Driving Licence">
+
+<meta property="og:description" content="Free online driving licence image compressor by TinyPixel.">
+
+<meta property="og:type" content="website">
+
+<meta property="og:url" content="https://awnishpandey186-ux.github.io/compress-image-for-driving-licence.html">
+
+<meta property="og:image" content="images/og-image.png">
+
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<header>
+
+<div class="container">
+
+<h2>TinyPixel</h2>
+
+</div>
+
+</header>
+
+<div class="container">
+
+<div class="hero">
+
+<h1>Compress Image for Driving Licence Online</h1>
+
+<p>
+
+Compress your driving licence application photo in seconds. TinyPixel helps reduce image size for learner licence, permanent driving licence, renewal and duplicate licence applications while maintaining excellent quality.
+
+</p>
+
+</div>
+
+<div class="tool-box">
+
+<h2>Driving Licence Image Compressor</h2>
+
+<p>
+
+Upload your image below and reduce its file size instantly.
+
+</p>
+
+<input type="file" id="upload" accept="image/*">
+
+<br><br>
+
+<img id="preview" style="display:none;max-width:100%;border-radius:10px;">
+
+<p id="originalSize"></p>
+
+<p id="compressedSize"></p>
+
+<br>
+
+<button onclick="compressImage()">
+Compress Image
+</button>
+
+<br><br>
+
+<a id="downloadBtn"
+style="display:none;background:#00c853;color:#fff;padding:12px 20px;border-radius:8px;text-decoration:none;">
+Download Image
+</a>
+
+<script>
+async function compressImage(){
+
+const input=document.getElementById("upload");
+
+if(!input.files.length){
+alert("Please select an image.");
+return;
+}
+
+const file=input.files[0];
+
+document.getElementById("originalSize").innerHTML=
+"<b>Original Size:</b> "+(file.size/1024).toFixed(2)+" KB";
+
+const img=new Image();
+img.src=URL.createObjectURL(file);
+await img.decode();
+
+const canvas=document.createElement("canvas");
+const ctx=canvas.getContext("2d");
+
+canvas.width=img.width;
+canvas.height=img.height;
+
+ctx.drawImage(img,0,0);
+
+const target=100*1024;
+
+let low=0.05;
+let high=1;
+let bestBlob=null;
+
+for(let i=0;i<12;i++){
+
+let quality=(low+high)/2;
+
+let blob=await new Promise(r=>canvas.toBlob(r,"image/jpeg",quality));
+
+if(blob.size>target){
+high=quality;
+}else{
+bestBlob=blob;
+low=quality;
+}
+
+}
+
+if(!bestBlob){
+bestBlob=await new Promise(r=>canvas.toBlob(r,"image/jpeg",0.05));
+}
+
+document.getElementById("compressedSize").innerHTML=
+"<b>Compressed Size:</b> "+(bestBlob.size/1024).toFixed(2)+" KB";
+
+const url=URL.createObjectURL(bestBlob);
+
+const preview=document.getElementById("preview");
+preview.src=url;
+preview.style.display="block";
+
+const download=document.getElementById("downloadBtn");
+download.href=url;
+download.download="driving-licence-photo.jpg";
+download.style.display="inline-block";
+
+}
+</script>
+
+</div>
+
+<div class="toc">
+
+<h2>Table of Contents</h2>
+
+<ul>
+
+<li>Why Compress Driving Licence Images?</li>
+
+<li>Benefits</li>
+
+<li>Supported Formats</li>
+
+<li>How to Compress</li>
+
+<li>Common Upload Errors</li>
+
+<li>Privacy & Security</li>
+
+<li>Frequently Asked Questions</li>
+
+</ul>
+
+</div><section>
+
+<h2>Why Compress Images for Driving Licence Applications?</h2>
+
+<p>
+Many driving licence application portals require applicants to upload a passport-size photograph that meets specific file size and format requirements. If the image is too large, the upload may fail or the application cannot be submitted. Compressing your photo helps you meet these requirements while maintaining clear image quality.
+</p>
+
+<p>
+TinyPixel provides a simple browser-based image compressor that helps reduce photo size in seconds. Whether you are applying for a learner's licence, a new driving licence, licence renewal or updating your licence details, the tool makes image preparation quick and convenient.
+</p>
+
+<p>
+The compressor works entirely in your browser, allowing you to prepare your image without installing additional software. It is suitable for both desktop and mobile users.
+</p>
+
+</section>
+
+<section>
+
+<h2>Benefits of TinyPixel</h2>
+
+<ul>
+
+<li>Reduce image size quickly.</li>
+
+<li>Maintain good visual quality.</li>
+
+<li>Prepare images for licence applications.</li>
+
+<li>No software installation required.</li>
+
+<li>Works on Android, iPhone and desktop.</li>
+
+<li>Supports JPG, JPEG, PNG and WEBP.</li>
+
+<li>Fast browser-based processing.</li>
+
+<li>Free to use anytime.</li>
+
+</ul>
+
+</section>
+
+<section>
+
+<h2>Supported Image Formats</h2>
+
+<p>
+
+TinyPixel supports the image formats commonly accepted by online application portals.
+
+</p>
+
+<ul>
+
+<li>JPG</li>
+
+<li>JPEG</li>
+
+<li>PNG</li>
+
+<li>WEBP</li>
+
+</ul>
+
+<p>
+
+After compression, download the optimized image and upload it to your driving licence application.
+
+</p>
+
+</section>
+
+<section>
+
+<h2>How to Compress Your Driving Licence Photo</h2>
+
+<ol>
+
+<li>Select your photograph.</li>
+
+<li>Upload it using the TinyPixel compressor.</li>
+
+<li>Adjust compression settings if needed.</li>
+
+<li>Preview the optimized image.</li>
+
+<li>Download the compressed version.</li>
+
+<li>Upload it to the official licence portal.</li>
+
+</ol>
+
+</section>
+
+<section>
+
+<h2>Common Upload Errors</h2>
+
+<ul>
+
+<li>Image exceeds the allowed file size.</li>
+
+<li>Unsupported image format.</li>
+
+<li>Incorrect image dimensions.</li>
+
+<li>Poor image quality.</li>
+
+<li>Blurry or cropped photograph.</li>
+
+<li>Corrupted image file.</li>
+
+</ul>
+
+<p>
+
+Checking the image before submission helps reduce upload failures and speeds up the application process.
+
+</p>
+
+</section>
+
+<section>
+
+<h2>Best Practices</h2>
+
+<ul>
+
+<li>Use a recent passport-size photograph.</li>
+
+<li>Keep the background plain if required.</li>
+
+<li>Ensure your face is clearly visible.</li>
+
+<li>Use JPG for maximum compatibility.</li>
+
+<li>Keep the original image as a backup.</li>
+
+<li>Verify file size before uploading.</li>
+
+</ul>
+
+</section>
+
+<section>
+
+<h2>Privacy & Security</h2>
+
+<p>
+
+TinyPixel processes your images directly in your browser whenever possible. Your files are not permanently stored, helping protect your privacy while preparing driving licence documents.
+
+</p>
+
+</section>
+
+<section>
+
+<h2>Related Tools</h2>
+
+<ul>
+
+<li><a href="compress-image-for-job-application.html">Compress Image for Job Application</a></li>
+
+<li><a href="compress-image-for-government-job.html">Compress Image for Government Job</a></li>
+
+<li><a href="compress-image-for-online-form.html">Compress Image for Online Form</a></li>
+
+<li><a href="compress-image-for-visa-application.html">Compress Image for Visa Application</a></li>
+
+<li><a href="compress-image-for-scholarship-form.html">Compress Image for Scholarship Form</a></li>
+
+<li><a href="compress-image-to-50kb.html">Compress Image to 50KB</a></li>
+
+<li><a href="compress-image-to-100kb.html">Compress Image to 100KB</a></li>
+
+<li><a href="passport-photo.html">Passport Photo Tool</a></li>
+
+<li><a href="jpg-to-png.html">JPG to PNG Converter</a></li>
+
+<li><a href="png-to-jpg.html">PNG to JPG Converter</a></li>
+
+</ul>
+
+</section><section>
+
+<h2>Frequently Asked Questions</h2>
+
+<h3>1. Is TinyPixel free to use?</h3>
+<p>Yes. TinyPixel is completely free and does not require registration.</p>
+
+<h3>2. Can I use this tool for learner's licence applications?</h3>
+<p>Yes. You can compress images for learner's licence, permanent driving licence and licence renewal applications.</p>
+
+<h3>3. Which image formats are supported?</h3>
+<p>TinyPixel supports JPG, JPEG, PNG and WEBP image formats.</p>
+
+<h3>4. Will compression reduce image quality?</h3>
+<p>The compressor is designed to reduce file size while maintaining clear image quality suitable for online applications.</p>
+
+<h3>5. Can I use TinyPixel on my mobile phone?</h3>
+<p>Yes. The tool works on Android, iPhone, tablets and desktop browsers.</p>
+
+<h3>6. Is my image stored?</h3>
+<p>No. Images are processed inside your browser whenever possible and are not permanently stored.</p>
+
+<h3>7. Can I compress passport-size photographs?</h3>
+<p>Yes. Passport-style photographs can easily be optimized for licence applications.</p>
+
+<h3>8. Do I need to install software?</h3>
+<p>No. TinyPixel works directly in your browser.</p>
+
+<h3>9. Can I compress multiple images?</h3>
+<p>Yes. Compress each image individually for the best quality.</p>
+
+<h3>10. Will the compressed image be accepted?</h3>
+<p>Acceptance depends on the official driving licence portal requirements. Always verify the required file size and dimensions before uploading.</p>
+
+</section>
+
+<section>
+
+<h2>Conclusion</h2>
+
+<p>
+
+Preparing the correct image before submitting your driving licence application saves time and helps prevent upload errors. TinyPixel provides a quick and secure way to reduce photo size while preserving quality. Whether you are applying for a learner's licence, renewing an existing licence or updating your details, our browser-based compressor helps you create upload-ready images in just a few clicks.
+
+</p>
+
+</section>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"BreadcrumbList",
+  "itemListElement":[
+    {
+      "@type":"ListItem",
+      "position":1,
+      "name":"Home",
+      "item":"https://awnishpandey186-ux.github.io/"
+    },
+    {
+      "@type":"ListItem",
+      "position":2,
+      "name":"Compress Image for Driving Licence",
+      "item":"https://awnishpandey186-ux.github.io/compress-image-for-driving-licence.html"
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {
+      "@type":"Question",
+      "name":"Is TinyPixel free?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Yes. TinyPixel is completely free to use."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Can I use it on mobile?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Yes. TinyPixel works on Android, iPhone, tablets and desktop browsers."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Does it support JPG and PNG?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Yes. JPG, JPEG, PNG and WEBP image formats are supported."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Is my image private?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Images are processed inside your browser whenever possible and are not permanently stored."
+      }
+    }
+  ]
+}
+</script>
+
+<footer style="background:#1b1b1b;margin-top:50px;padding:35px 20px;text-align:center;border-top:2px solid #00ffae;line-height:2;">
+
+<h2 style="color:#00ffae;">TinyPixel</h2>
+
+<p>
+TinyPixel is a free online image compressor and converter. Compress photos for driving licence, government jobs, passport, online forms, scholarships, and more. Convert JPG, PNG, and WebP images instantly.
+</p>
+
+<h3 style="color:#00ffae;">Popular Tools</h3>
+
+<p>
+<a href="compress-image-to-20kb.html">20KB</a> |
+<a href="compress-image-to-30kb.html">30KB</a> |
+<a href="compress-image-to-50kb.html">50KB</a> |
+<a href="compress-image-to-100kb.html">100KB</a> |
+<a href="compress-image-to-200kb.html">200KB</a>
+</p>
+
+<h3 style="color:#00ffae;">Converters</h3>
+
+<p>
+<a href="jpg-to-png.html">JPG to PNG</a> |
+<a href="png-to-jpg.html">PNG to JPG</a> |
+<a href="webp-converter.html">WebP Converter</a> |
+<a href="passport-photo.html">Passport Photo Maker</a>
+</p>
+
+<h3 style="color:#00ffae;">Company</h3>
+
+<p>
+<a href="index.html">Home</a> |
+<a href="about.html">About</a> |
+<a href="privacy.html">Privacy</a> |
+<a href="terms.html">Terms</a> |
+<a href="faq.html">FAQ</a> |
+<a href="contact.html">Contact</a>
+</p>
+
+<p style="margin-top:20px;color:#999;">
+© 2026 TinyPixel. All Rights Reserved.
+</p>
+
+</footer>
+
+</div>
+
+</body>
+
+</html>

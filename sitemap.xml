@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<siteMap>
+    <metaData>
+        <siteName>TinyPixel</siteName>
+        <lastUpdated>2026-07-16</lastUpdated>
+        <purpose>AdSense Compliance &amp; Internal Crawler Navigation Mapping</purpose>
+    </metaData>
+
+    <categories>
+        <!-- Category 1: Target Size Compressors -->
+        <category id="size-compressors">
+            <title>Target Size Compressors</title>
+            <links>
+                <link>
+                 <link>
+                    <title>Compress Image to 20KB</title>
+                    <url>compress-image-to-20kb.html</url>
+                </link>
+                <link>
+                    <title>Compress Image to 30KB</title>
+                    <url>compress-image-to-30kb.html</url>
+                </link>
+                <link>
+                    <title>Compress Image to 50KB</title>
+                    <url>compress-image-to-50kb.html</url>
+                </link>
+                <link>
+                    <title>Compress Image to 100KB</title>
+                    <url>compress-image-to-100kb.html</url>
+                </link>
+                <link>
+                    <title>Compress Image to 200KB</title>
+                    <url>compress-image-to-200kb.html</url>
+                </link>
+            </links>
+        </category>
+
+        <!-- Category 2: Specialized Use Cases -->
+        <category id="portal-optimizers">
+            <title>Portal &amp; Form Optimizers</title>
+            <links>
+                <link>
+                    <title>Compress for Online Form</title>
+                    <url>compress-image-for-online-form.html</url>
+                </link>
+                <link>
+                    <title>Compress for Job Application</title>
+                    <url>compress-image-for-job-application.html</url>
+                </link>
+                <link>
+                    <title>Compress for Scholarship Form</title>
+                    <url>compress-image-for-scholarship-form.html</url>
+                </link>
+                <link>
+                    <title>Compress for Driving Licence</title>
+                    <url>compress-image-for-driving-licence.html</url>
+                </link>
+                <link>
+                    <title>Compress for Government Job</title>
+                    <url>compress-image-for-government-job.html</url>
+                </link>
+                <link>
+                    <title>Compress for Visa Application</title>
+                    <url>compress-image-for-visa-application.html</url>
+                </link>
+                <link>
+                    <title>Compress for College Admission</title>
+                    <url>Compress-image-for-college-admission.html</url>
+                </link>
+            </links>
+        </category>
+
+        <!-- Category 3: Format Converters & Social -->
+        <category id="format-converters">
+            <title>Converters &amp; Format Editors</title>
+            <links>
+                <link>
+                    <title>WhatsApp Image Compressor</title>
+                    <url>whatsapp-image-compressor.html</url>
+                </link>
+                <link>
+                    <title>Passport Photo Tool</title>
+                    <url>passport-photo.html</url>
+                </link>
+                <link>
+                    <title>Convert JPG to PNG Online</title>
+                    <url>jpg-to-png.html</url>
+                </link>
+                <link>
+                    <title>Convert PNG to JPG Online</title>
+                    <url>png-to-jpg.html</url>
+                </link>
+                <link>
+                    <title>WEBP Image Converter</title>
+                    <url>webp-converter.html</url>
+                </link>
+            </links>
+        </category>
+
+        <!-- Category 4: Essential Corporate Pages -->
+        <category id="compliance-directory">
+            <title>Legal &amp; Company Directory</title>
+            <links>
+                <link type="essential">
+                    <title>Home Dashboard</title>
+                    <url>index.html</url>
+                </link>
+                <link type="essential">
+                    <title>About Us</title>
+                    <url>about.html</url>
+                </link>
+                <link type="essential">
+                    <title>Frequently Asked Questions (FAQ)</title>
+                    <url>faq.html</url>
+                </link>
+                <link type="essential">
+                    <title>Privacy Policy Statement</title>
+                    <url>privacy.html</url>
+                </link>
+                <link type="essential">
+                    <title>Terms and Conditions</title>
+                    <url>terms.html</url>
+                </link>
+                <link type="essential">
+                    <title>Contact Us / Support</title>
+                    <url>contact.html</url>
+                </link>
+            </links>
+        </category>
+    </categories>
+</siteMap>

@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Compress Image for Government Job Applications | TinyPixel</title>
+
+<meta name="description" content="Compress images for government job applications online. Reduce photo size for SSC, UPSC, Railways, Banking, Police and other recruitment portals without losing quality.">
+
+<meta name="keywords" content="compress image for government job, government job photo compressor, SSC image compressor, UPSC photo resize, railway photo compressor">
+
+<meta name="robots" content="index,follow">
+
+<meta name="author" content="TinyPixel">
+
+<link rel="canonical" href="https://awnishpandey186-ux.github.io/compress-image-for-government-job.html">
+
+<meta property="og:title" content="Compress Image for Government Job Applications">
+
+<meta property="og:description" content="Free online government job photo compressor by TinyPixel.">
+
+<meta property="og:type" content="website">
+
+<meta property="og:image" content="images/og-image.png">
+
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<header>
+
+<div class="container">
+
+<h2>TinyPixel</h2>
+
+</div>
+
+</header>
+
+<div class="container">
+
+<div class="hero">
+
+<h1>Compress Image for Government Job Applications</h1>
+
+<p>
+
+Reduce your photograph size for SSC, UPSC, Banking, Railway, Police, Defence and other government recruitment portals while maintaining excellent image quality.
+
+</p>
+
+</div>
+
+<div class="tool-box">
+
+<h2>Government Job Image Compressor</h2>
+
+<p>
+
+Upload your image below to reduce its file size instantly.
+
+</p>
+
+<input type="file" id="upload" accept="image/*">
+
+<br><br>
+
+<img id="preview" style="display:none;max-width:100%;border-radius:10px;">
+
+<p id="originalSize"></p>
+<p id="compressedSize"></p>
+
+<br>
+
+<button onclick="compressImage()">
+Compress Image
+</button>
+
+<br><br>
+
+<a id="downloadBtn"
+style="display:none;background:#00c853;color:#fff;padding:12px 20px;border-radius:8px;text-decoration:none;">
+Download Image
+</a>
+
+<script>
+async function compressImage(){
+
+const input=document.getElementById("upload");
+
+if(!input.files.length){
+alert("Please select an image.");
+return;
+}
+
+const file=input.files[0];
+
+document.getElementById("originalSize").innerHTML=
+"<b>Original Size:</b> "+(file.size/1024).toFixed(2)+" KB";
+
+const img=new Image();
+img.src=URL.createObjectURL(file);
+await img.decode();
+
+const canvas=document.createElement("canvas");
+const ctx=canvas.getContext("2d");
+
+canvas.width=img.width;
+canvas.height=img.height;
+
+ctx.drawImage(img,0,0);
+
+const target=100*1024;
+
+let low=0.05;
+let high=1;
+let bestBlob=null;
+
+for(let i=0;i<12;i++){
+
+let quality=(low+high)/2;
+
+let blob=await new Promise(r=>canvas.toBlob(r,"image/jpeg",quality));
+
+if(blob.size>target){
+high=quality;
+}else{
+bestBlob=blob;
+low=quality;
+}
+
+}
+
+if(!bestBlob){
+bestBlob=await new Promise(r=>canvas.toBlob(r,"image/jpeg",0.05));
+}
+
+document.getElementById("compressedSize").innerHTML=
+"<b>Compressed Size:</b> "+(bestBlob.size/1024).toFixed(2)+" KB";
+
+const url=URL.createObjectURL(bestBlob);
+
+const preview=document.getElementById("preview");
+preview.src=url;
+preview.style.display="block";
+
+const download=document.getElementById("downloadBtn");
+download.href=url;
+download.download="government-job-photo.jpg";
+download.style.display="inline-block";
+
+}
+</script>
+
+</div>
+
+<div class="toc">
+
+<h2>Table of Contents</h2>
+
+<ul>
+
+<li>Why Compress Images?</li>
+
+<li>Supported Formats</li>
+
+<li>Benefits</li>
+
+<li>How to Use</li>
+
+<li>Common Upload Errors</li>
+
+<li>Privacy & Security</li>
+
+<li>Frequently Asked Questions</li>
+
+</ul>
+
+</div><section>
+
+<h2>Why Compress Images for Government Job Applications?</h2>
+
+<p>
+Most government recruitment portals require applicants to upload a recent passport-size photograph that meets strict file size and format requirements. Whether you are applying for SSC, UPSC, Railway Recruitment Boards (RRB), IBPS banking exams, State PSC, Police recruitment, Defence services or other public sector jobs, an oversized image can prevent your application from being submitted successfully.
+</p>
+
+<p>
+TinyPixel helps you compress your photograph quickly without installing software. The tool reduces file size while maintaining good image quality, making it easier to upload photographs even on slow internet connections.
+</p>
+
+<p>
+Instead of repeatedly editing your photo using different applications, you can prepare it directly in your browser. This saves time and helps ensure your image is ready before the application deadline.
+</p>
+
+</section>
+
+<section>
+
+<h2>Benefits of TinyPixel</h2>
+
+<ul>
+
+<li>Reduce image size within seconds.</li>
+
+<li>Maintain clear photo quality.</li>
+
+<li>Compatible with most government recruitment portals.</li>
+
+<li>No software installation required.</li>
+
+<li>Supports mobile and desktop devices.</li>
+
+<li>Works with JPG, JPEG, PNG and WEBP images.</li>
+
+<li>Free online image compression.</li>
+
+<li>Simple interface suitable for beginners.</li>
+
+</ul>
+
+</section>
+
+<section>
+
+<h2>Supported Image Formats</h2>
+
+<p>
+
+TinyPixel supports the most commonly accepted formats used by recruitment websites.
+
+</p>
+
+<ul>
+
+<li>JPG</li>
+
+<li>JPEG</li>
+
+<li>PNG</li>
+
+<li>WEBP</li>
+
+</ul>
+
+<p>
+
+Download the optimized image immediately after compression and upload it to the official recruitment portal.
+
+</p>
+
+</section>
+
+<section>
+
+<h2>How to Compress Your Government Job Photo</h2>
+
+<ol>
+
+<li>Select your passport-size photograph.</li>
+
+<li>Upload it to the TinyPixel compressor.</li>
+
+<li>Choose the desired compression level.</li>
+
+<li>Preview the optimized image.</li>
+
+<li>Download the compressed version.</li>
+
+<li>Upload it to the official recruitment website.</li>
+
+</ol>
+
+</section>
+
+<section>
+
+<h2>Common Upload Errors</h2>
+
+<ul>
+
+<li>Image exceeds maximum file size.</li>
+
+<li>Unsupported image format.</li>
+
+<li>Incorrect image dimensions.</li>
+
+<li>Poor image quality.</li>
+
+<li>Blurry photograph.</li>
+
+<li>Damaged image file.</li>
+
+</ul>
+
+<p>
+
+Always review the official notification before uploading your photograph because every recruitment authority may have different requirements.
+
+</p>
+
+</section>
+
+<section>
+
+<h2>Best Practices</h2>
+
+<ul>
+
+<li>Use a recent passport-size photograph.</li>
+
+<li>Keep the background clean if required.</li>
+
+<li>Ensure your face is clearly visible.</li>
+
+<li>Use JPG whenever possible.</li>
+
+<li>Keep a backup of the original image.</li>
+
+<li>Verify the final file size before uploading.</li>
+
+</ul>
+
+</section>
+
+<section>
+
+<h2>Privacy & Security</h2>
+
+<p>
+
+TinyPixel processes images directly inside your browser whenever possible. Your photographs are not permanently stored, helping protect your personal information while preparing documents for government recruitment.
+
+</p>
+
+</section>
+
+<section>
+
+<h2>Related Tools</h2>
+
+<ul>
+
+<li><a href="compress-image-for-job-application.html">Compress Image for Job Application</a></li>
+
+<li><a href="compress-image-for-online-form.html">Compress Image for Online Form</a></li>
+
+<li><a href="compress-image-for-scholarship-form.html">Compress Image for Scholarship Form</a></li>
+
+<li><a href="compress-image-for-visa-application.html">Compress Image for Visa Application</a></li>
+
+<li><a href="compress-image-to-50kb.html">Compress Image to 50KB</a></li>
+
+<li><a href="compress-image-to-100kb.html">Compress Image to 100KB</a></li>
+
+<li><a href="passport-photo.html">Passport Photo Tool</a></li>
+
+<li><a href="jpg-to-png.html">JPG to PNG Converter</a></li>
+
+<li><a href="png-to-jpg.html">PNG to JPG Converter</a></li>
+
+<li><a href="webp-converter.html">WEBP Converter</a></li>
+
+</ul>
+
+</section><section>
+
+<h2>Frequently Asked Questions</h2>
+
+<h3>1. Is TinyPixel free to use?</h3>
+<p>Yes. TinyPixel is completely free and does not require registration or installation.</p>
+
+<h3>2. Can I use this tool for SSC and UPSC applications?</h3>
+<p>Yes. It is suitable for preparing images for SSC, UPSC, Railway, Banking, Police, Defence and many other government recruitment portals.</p>
+
+<h3>3. Which image formats are supported?</h3>
+<p>JPG, JPEG, PNG and WEBP image formats are supported.</p>
+
+<h3>4. Will image quality be affected?</h3>
+<p>The compressor is designed to reduce file size while preserving good visual quality.</p>
+
+<h3>5. Can I use TinyPixel on my mobile phone?</h3>
+<p>Yes. It works on Android smartphones, iPhones, tablets and desktop computers.</p>
+
+<h3>6. Is my uploaded image secure?</h3>
+<p>Images are processed inside your browser whenever possible and are not permanently stored.</p>
+
+<h3>7. Can I compress passport-size photographs?</h3>
+<p>Yes. Passport-size photos can easily be compressed for online recruitment forms.</p>
+
+<h3>8. Do I need to create an account?</h3>
+<p>No. TinyPixel works instantly without registration.</p>
+
+<h3>9. Can I compress images multiple times?</h3>
+<p>Yes, but using the original image generally produces the best quality.</p>
+
+<h3>10. Will the compressed image be accepted?</h3>
+<p>Acceptance depends on the official recruitment portal's photo requirements. Always verify the required file size and dimensions before uploading.</p>
+
+</section>
+
+<section>
+
+<h2>Conclusion</h2>
+
+<p>
+
+Uploading a correctly sized photograph is an important step in every government job application. TinyPixel helps you reduce image size quickly while maintaining clear quality, allowing you to complete online applications with fewer upload errors. Before submitting your form, always review the official recruitment notification to ensure your image meets the required specifications.
+
+</p>
+
+</section>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"BreadcrumbList",
+  "itemListElement":[
+    {
+      "@type":"ListItem",
+      "position":1,
+      "name":"Home",
+      "item":"https://awnishpandey186-ux.github.io/"
+    },
+    {
+      "@type":"ListItem",
+      "position":2,
+      "name":"Compress Image for Government Job",
+      "item":"https://awnishpandey186-ux.github.io/compress-image-for-government-job.html"
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {
+      "@type":"Question",
+      "name":"Is TinyPixel free to use?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Yes. TinyPixel is completely free."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Can I use it on mobile?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Yes. It works on Android, iPhone, tablets and desktop browsers."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Does it support JPG and PNG?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Yes. JPG, JPEG, PNG and WEBP image formats are supported."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Is my image private?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Images are processed in your browser whenever possible and are not permanently stored."
+      }
+    }
+  ]
+}
+</script>
+
+<footer style="background:#1b1b1b;margin-top:50px;padding:35px 20px;text-align:center;border-top:2px solid #00ffae;line-height:2;">
+
+<h2 style="color:#00ffae;">TinyPixel</h2>
+
+<p>
+TinyPixel is a free online image compressor and converter. Compress images for government jobs, driving licence, passport, online forms, scholarships, and convert JPG, PNG and WebP images instantly.
+</p>
+
+<h3 style="color:#00ffae;">Popular Tools</h3>
+
+<p>
+<a href="compress-image-to-20kb.html">20KB</a> |
+<a href="compress-image-to-30kb.html">30KB</a> |
+<a href="compress-image-to-50kb.html">50KB</a> |
+<a href="compress-image-to-100kb.html">100KB</a> |
+<a href="compress-image-to-200kb.html">200KB</a>
+</p>
+
+<h3 style="color:#00ffae;">Converters</h3>
+
+<p>
+<a href="jpg-to-png.html">JPG to PNG</a> |
+<a href="png-to-jpg.html">PNG to JPG</a> |
+<a href="webp-converter.html">WebP Converter</a> |
+<a href="passport-photo.html">Passport Photo Maker</a>
+</p>
+
+<h3 style="color:#00ffae;">Company</h3>
+
+<p>
+<a href="index.html">Home</a> |
+<a href="about.html">About</a> |
+<a href="privacy.html">Privacy Policy</a> |
+<a href="terms.html">Terms & Conditions</a> |
+<a href="faq.html">FAQ</a> |
+<a href="contact.html">Contact</a>
+</p>
+
+<p style="margin-top:20px;color:#999;">
+© 2026 TinyPixel. All Rights Reserved.
+</p>
+
+</footer>
+
+</div>
+
+</body>
+
+</html>

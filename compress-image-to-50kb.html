@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Compress Image to 50KB Online - TinyPixel</title>
+
+<meta name="description"
+content="Compress image to 50KB online instantly using TinyPixel. Free, fast, secure, and mobile-friendly image compressor tool.">
+
+<!-- 🔴 GOOGLE ADSENSE HEAD CODE (EXACT PLACEMENT) -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7296969739309915"
+     crossorigin="anonymous"></script>
+</head>
+<style>
+
+body{
+background:#111;
+color:white;
+font-family:Arial,sans-serif;
+margin:0;
+padding:0;
+line-height:1.6;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+padding:20px;
+}
+
+header{
+text-align:center;
+margin-bottom:30px;
+}
+
+h1{
+font-size:32px;
+margin-bottom:10px;
+}
+
+h2{
+color:#00ffae;
+}
+
+nav{
+margin:15px 0;
+}
+
+nav a{
+color:#00ffae;
+text-decoration:none;
+margin:0 8px;
+}
+
+nav a:hover{
+text-decoration:underline;
+}
+
+.tool{
+background:#1b1b1b;
+padding:20px;
+border-radius:10px;
+margin-bottom:30px;
+text-align:center;
+}
+
+.seo{
+background:#1b1b1b;
+padding:20px;
+border-radius:10px;
+margin-bottom:25px;
+}
+
+.adsense{
+margin:30px 0;
+text-align:center;
+}
+
+button{
+background:#00ffae;
+border:none;
+padding:12px 20px;
+border-radius:8px;
+cursor:pointer;
+font-weight:bold;
+}
+
+input{
+margin:10px 0;
+}
+
+img{
+max-width:100%;
+margin-top:15px;
+border-radius:10px;
+}
+
+footer{
+margin-top:40px;
+padding-top:20px;
+border-top:1px solid #333;
+text-align:center;
+font-size:14px;
+color:#aaa;
+}
+
+footer a{
+color:#00ffae;
+text-decoration:none;
+margin:0 5px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- HEADER -->
+
+<header>
+
+<h2>TinyPixel</h2>
+
+<h1>Compress Image to 50KB Online</h1>
+
+<p>
+Reduce image size to 50KB instantly without losing important quality.
+Fast, secure, and completely browser-based.
+</p>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="compress-image-to-100kb.html">100KB</a>
+<a href="passport-photo.html">Passport Photo Compressor</a>
+<a href="whatsapp-image-compressor.html">WhatsApp</a>
+</nav>
+
+</header>
+
+<!-- TOOL SECTION -->
+
+<div class="tool">
+
+<h2>Upload Image</h2>
+
+<input type="file" id="upload">
+
+<button onclick="compressImage()">
+Compress Image
+</button>
+
+<p id="originalSize"></p>
+
+<p id="compressedSize"></p>
+
+<img id="preview">
+
+<br><br>
+
+<a id="downloadBtn" download="compressed-image.jpg">
+<button>Download Image</button>
+</a>
+
+</div>
+
+<!-- SEO CONTENT -->
+
+<div class="seo">
+
+<h2>Free 50KB Image Compressor</h2>
+
+<p>
+TinyPixel helps you compress images to 50KB online instantly for forms,
+government portals, job applications, and exam submissions.
+</p>
+
+<p>
+This tool supports JPG, PNG, and WebP image formats while keeping image quality clear and optimized.
+</p>
+
+<p>
+Everything works directly in your browser, so your images never leave your device.
+This makes TinyPixel fast, secure, and privacy-friendly.
+</p>
+
+<p>
+You can also use our
+<a href="compress-image-to-100kb.html">100KB Compressor</a>
+or
+<a href="passport-photo.html">Passport Photo Compressor</a>.
+</p>
+
+</div>
+
+<!-- 🔴 FIRST ADSENSE PLACEMENT (EXACT PLACE) -->
+
+<div class="adsense">
+
+<ins class="adsbygoogle"
+style="display:block"
+data-ad-client="ca-pub-7296969739309915"
+data-ad-slot="1234567890"
+data-ad-format="auto"
+data-full-width-responsive="true"></ins>
+
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+</div>
+
+<!-- SECOND SEO SECTION -->
+
+<div class="seo">
+
+<h2>Why Use TinyPixel?</h2>
+
+<p>
+TinyPixel is lightweight, mobile-friendly, and works on Android, iPhone, tablets, and desktop devices.
+No installation or signup is required.
+</p>
+
+<p>
+Unlike many online tools, TinyPixel does not upload your images to servers.
+Compression happens locally using browser technology for better privacy and speed.
+</p>
+
+</div>
+
+<!-- 🔴 SECOND ADSENSE PLACEMENT -->
+
+<div class="adsense">
+
+<ins class="adsbygoogle"
+style="display:block"
+data-ad-client="ca-pub-7296969739309915"
+data-ad-slot="1234567890"
+data-ad-format="auto"
+data-full-width-responsive="true"></ins>
+
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+</div>
+
+<!-- FOOTER -->
+
+<footer>
+
+<p>
+<a href="index.html">Home</a> |
+<a href="about.html">About</a> |
+<a href="privacy-policy.html">Privacy Policy</a> |
+<a href="contact.html">Contact</a>
+</p>
+
+<p>
+© 2026 TinyPixel
+</p>
+
+</footer>
+
+</div>
+
+<script>
+
+function compressImage(){
+
+const fileInput = document.getElementById('upload');
+const quality = document.getElementById('quality').value;
+const preview = document.getElementById('preview');
+const downloadBtn = document.getElementById('downloadBtn');
+
+if(!fileInput.files[0]) return;
+
+const file = fileInput.files[0];
+
+document.getElementById('originalSize').innerText =
+"Original Size: " + (file.size/1024).toFixed(2) + " KB";
+
+const reader = new FileReader();
+
+reader.onload = function(e){
+
+const img = new Image();
+
+img.onload = function(){
+
+const canvas = document.createElement('canvas');
+const ctx = canvas.getContext('2d');
+
+canvas.width = img.width;
+canvas.height = img.height;
+
+ctx.drawImage(img,0,0);
+
+canvas.toBlob(function(blob){
+
+const compressedUrl = URL.createObjectURL(blob);
+
+preview.src = compressedUrl;
+
+document.getElementById('compressedSize').innerText =
+"Compressed Size: " + (blob.size/1024).toFixed(2) + " KB";
+
+downloadBtn.href = compressedUrl;
+
+},'image/jpeg',quality);
+
+}
+
+img.src = e.target.result;
+
+}
+
+reader.readAsDataURL(file);
+
+}
+
+</script>
+
+</body>
+</html>

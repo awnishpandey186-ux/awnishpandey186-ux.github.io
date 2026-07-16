@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>PNG to JPG Converter | TinyPixel</title>
+
+<meta name="description" content="Convert PNG images to JPG online for free using TinyPixel. Fast, secure and works directly in your browser.">
+
+<style>
+
+body{
+font-family:Arial,sans-serif;
+background:#121212;
+color:white;
+margin:0;
+padding:0;
+}
+
+.container{
+max-width:700px;
+margin:40px auto;
+padding:25px;
+background:#1e1e1e;
+border-radius:15px;
+text-align:center;
+}
+
+input{
+margin:20px 0;
+}
+
+button{
+padding:12px 24px;
+font-size:16px;
+border:none;
+border-radius:10px;
+cursor:pointer;
+background:#007BFF;
+color:white;
+}
+
+button:hover{
+background:#0056d2;
+}
+
+img{
+max-width:100%;
+margin-top:20px;
+border-radius:10px;
+}
+
+#downloadBtn{
+display:none;
+margin-top:20px;
+background:#28a745;
+padding:12px 25px;
+border-radius:10px;
+color:white;
+text-decoration:none;
+display:inline-block;
+}
+
+.seo{
+max-width:900px;
+margin:30px auto;
+padding:25px;
+background:#1b1b1b;
+border-radius:12px;
+line-height:1.8;
+}
+
+.seo h2{
+color:#00ffae;
+margin-top:20px;
+}
+
+.seo a{
+color:#00ffae;
+text-decoration:none;
+}
+
+footer{
+margin-top:40px;
+padding:25px;
+text-align:center;
+background:#1b1b1b;
+border-top:1px solid #333;
+line-height:2;
+}
+
+footer a{
+color:#00ffae;
+text-decoration:none;
+margin:0 5px;
+}
+
+footer a:hover{
+text-decoration:underline;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>PNG to JPG Converter</h1>
+
+<p>Upload your PNG image and convert it into JPG instantly.</p>
+
+<input type="file" id="imageInput" accept="image/png">
+
+<br>
+
+<img id="preview">
+
+<br><br>
+
+<button onclick="convertImage()">Convert to JPG</button>
+
+<br>
+
+<a id="downloadBtn">Download JPG</a>
+<div class="section">
+
+<h2>About PNG to JPG Converter</h2>
+
+<p>
+TinyPixel PNG to JPG Converter helps you convert PNG images into JPG format directly in your browser. JPG images are smaller in size and are ideal for websites, email attachments, online forms, and social media.
+</p>
+
+<p>
+The conversion process is fast, secure, and does not require software installation. Your images remain on your device whenever possible.
+</p>
+
+<h2>How to Use</h2>
+
+<ol>
+<li>Select a PNG image.</li>
+<li>Click Convert to JPG.</li>
+<li>Preview the converted image.</li>
+<li>Download the JPG file.</li>
+</ol>
+<div class="section">
+
+<h2>Frequently Asked Questions</h2>
+
+<h3>Is TinyPixel free?</h3>
+
+<p>Yes. TinyPixel is completely free.</p>
+
+<h3>Do I need to install software?</h3>
+
+<p>No. Everything works in your browser.</p>
+
+<h3>Is my image uploaded?</h3>
+
+<p>No. Processing happens locally whenever possible.</p>
+
+</div>
+
+<script>
+
+let image=new Image();
+
+document.getElementById("imageInput").addEventListener("change",function(e){
+
+const file=e.target.files[0];
+
+if(!file) return;
+
+const reader=new FileReader();
+
+reader.onload=function(event){
+
+document.getElementById("preview").style.display="block";
+
+image.src=event.target.result;
+
+document.getElementById("preview").src=event.target.result;
+
+}
+
+reader.readAsDataURL(file);
+
+});
+
+function convertImage(){
+
+if(!image.src){
+
+alert("Please select a PNG image.");
+
+return;
+
+}
+
+const canvas=document.createElement("canvas");
+
+canvas.width=image.width;
+
+canvas.height=image.height;
+
+const ctx=canvas.getContext("2d");
+
+ctx.fillStyle="#ffffff";
+
+ctx.fillRect(0,0,canvas.width,canvas.height);
+
+ctx.drawImage(image,0,0);
+
+const jpg=canvas.toDataURL("image/jpeg",0.95);
+
+const download=document.getElementById("downloadBtn");
+
+download.download="converted-image.jpg";
+
+download.style.display="inline-block";
+
+}
+
+</script>
+<footer>
+
+<hr>
+
+<div style="max-width:900px;margin:auto;padding:30px 20px;text-align:center;line-height:2;">
+
+<h3>TinyPixel</h3>
+
+<p>
+Free online image compression and conversion tools for JPG, PNG, and WebP.
+Fast, secure, mobile-friendly, and works directly in your browser.
+</p>
+
+<p>
+
+<a href="index.html">Home</a> |
+
+<a href="compress-image-to-20kb.html">20KB</a> |
+
+<a href="compress-image-to-30kb.html">30KB</a> |
+
+<a href="compress-image-to-50kb.html">50KB</a> |
+
+<a href="compress-image-to-100kb.html">100KB</a> |
+
+<a href="compress-image-to-200kb.html">200KB</a>
+
+</p>
+
+<p>
+
+<a href="jpg-to-png.html">JPG to PNG</a> |
+
+<a href="png-to-jpg.html">PNG to JPG</a> |
+
+<a href="webp-converter.html">WebP Converter</a> |
+
+<a href="passport-photo.html">Passport Photo</a>
+
+</p>
+
+<p>
+
+<a href="about.html">About Us</a> |
+
+<a href="privacy.html">Privacy Policy</a> |
+
+<a href="terms.html">Terms & Conditions</a> |
+
+<a href="faq.html">FAQ</a> |
+
+<a href="contact.html">Contact Us</a>
+
+</p>
+
+<p>
+
+<a href="compress-image-for-driving-licence.html">Driving Licence</a> |
+
+<a href="compress-image-for-job-application.html">Job Application</a> |
+
+<a href="compress-image-for-online-form.html">Online Form</a> |
+
+<a href="compress-image-for-scholarship-form.html">Scholarship Form</a> |
+
+<a href="compress-image-for-government-job.html">Government Job</a>
+
+</p>
+
+<p style="margin-top:20px;color:#888;">
+© 2026 TinyPixel. All Rights Reserved.
+</p>
+
+</div>
+
+</footer>
+
+</body>
+</html>
